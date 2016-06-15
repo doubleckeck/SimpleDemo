@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA44A7931D115A74008A1729 /* NSTimer+SimpleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44A7921D115A74008A1729 /* NSTimer+SimpleTimer.m */; };
 		EA6C1A831D0FE97F00F0351B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C1A821D0FE97F00F0351B /* main.m */; };
 		EA6C1A861D0FE97F00F0351B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C1A851D0FE97F00F0351B /* AppDelegate.m */; };
 		EA6C1A891D0FE97F00F0351B /* RunloopDemo0.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C1A881D0FE97F00F0351B /* RunloopDemo0.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA44A7911D115A74008A1729 /* NSTimer+SimpleTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+SimpleTimer.h"; sourceTree = "<group>"; };
+		EA44A7921D115A74008A1729 /* NSTimer+SimpleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+SimpleTimer.m"; sourceTree = "<group>"; };
 		EA6C1A7E1D0FE97F00F0351B /* RunloopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunloopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6C1A821D0FE97F00F0351B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA6C1A841D0FE97F00F0351B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA44A7901D115A17008A1729 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				EA44A7911D115A74008A1729 /* NSTimer+SimpleTimer.h */,
+				EA44A7921D115A74008A1729 /* NSTimer+SimpleTimer.m */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
 		EA6C1A751D0FE97F00F0351B = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 			children = (
 				EA6C1A841D0FE97F00F0351B /* AppDelegate.h */,
 				EA6C1A851D0FE97F00F0351B /* AppDelegate.m */,
+				EA44A7901D115A17008A1729 /* tool */,
 				EAAEED951D10EC1400C8B7BE /* demo */,
 				EA6C1A8A1D0FE97F00F0351B /* Main.storyboard */,
 				EA6C1A8D1D0FE97F00F0351B /* Assets.xcassets */,
@@ -297,6 +310,7 @@
 				EAAEED981D10EC3200C8B7BE /* DemoList.m in Sources */,
 				EA6C1A861D0FE97F00F0351B /* AppDelegate.m in Sources */,
 				EAAEED9B1D10F02F00C8B7BE /* RunloopDemo2.m in Sources */,
+				EA44A7931D115A74008A1729 /* NSTimer+SimpleTimer.m in Sources */,
 				EA6C1AB61D0FEF5F00F0351B /* RunloopDemo1.m in Sources */,
 				EA6C1A831D0FE97F00F0351B /* main.m in Sources */,
 			);
