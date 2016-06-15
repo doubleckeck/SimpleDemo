@@ -8,7 +8,8 @@
 
 #import "NSTimer+SimpleTimer.h"
 static dispatch_source_t timer;
-@implementation NSTimer (SafetyTimer)
+
+@implementation NSTimer (SimpleTimer)
 +(void )run_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action
 {
     __block BOOL stop = NO;
@@ -22,6 +23,7 @@ static dispatch_source_t timer;
     });
 }
 
+/* 这个只能创建一个timer */
 +(void )gcd_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action
 {
     timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
@@ -30,7 +32,7 @@ static dispatch_source_t timer;
     }];
 }
 
-+(void )gcd_scheduledTimerWithSource:(dispatch_source_t )source timerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action end:(void (^)(dispatch_source_t )) end
++(void )gcd_scheduledTimerWithSource:(dispatch_source_t )source timerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action end:(void (^)(dispatch_source_t source)) end
 {
     __block BOOL stop = NO;
     dispatch_source_set_timer(source, DISPATCH_TIME_NOW, interval * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
