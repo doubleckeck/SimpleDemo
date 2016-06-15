@@ -33,12 +33,14 @@
     dispatch_async(self.queue1, ^{
         
 
-        NSLog(@"开始");
+        NSLog(@"开始 thread:%@",[NSThread currentThread]);
+        
         [self performSelector:@selector(threadMothod:) onThread:[NSThread currentThread] withObject:nil waitUntilDone:NO];
         //必须添加到runloop
         [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
         [[NSRunLoop currentRunLoop] run];
         
+        //在这里不会执行
         NSLog(@"queue2");
     });
     
@@ -47,21 +49,19 @@
         
         self.thread_my = [NSThread currentThread];
         
-        NSLog(@"开始runloop");
+        NSLog(@"开始runloop 在thread:%@",[NSThread currentThread]);
         
         [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
         
         do{
             //休眠
-            NSLog(@" ------ 第%@ 次休眠\n\n",@(t));
+            NSLog(@" ------ 第%@ 次休眠\n\n",@(t+1));
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             NSLog(@"执行任务......%@",@(t));
         }while (!finish);
         
         NSLog(@"线程结束\n\n");
     });
-    
-    
 }
 
 -(void )threadMothod:(id )sender

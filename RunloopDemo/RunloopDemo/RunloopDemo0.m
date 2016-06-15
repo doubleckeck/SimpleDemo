@@ -6,13 +6,13 @@
 //  Copyright © 2016年 KH. All rights reserved.
 //
 
-#import "ViewController.h"
-@interface ViewController ()
+#import "RunloopDemo0.h"
+@interface RunloopDemo0 ()
 @property (strong, nonatomic) NSThread *thread;
 
 @end
 
-@implementation ViewController
+@implementation RunloopDemo0
 
 - (void)viewDidLoad
 {
