@@ -15,12 +15,31 @@ static dispatch_source_t timer;
     __block BOOL stop = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-        [runloop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0]];
-        do {
-            action(&stop);
-            sleep(1);
-        } while (stop^repeat);
+        NSValue *value = [NSValue valueWithPointer:&stop];
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:value forKey:@"stop"];
+        [dict setObject:action forKey:@"action"];
+        [runloop addTimer:[NSTimer timerWithTimeInterval:interval target:self selector:@selector(runloopTimer:) userInfo:dict repeats:repeat] forMode:NSDefaultRunLoopMode];
+        [runloop run];
     });
+}
+
++(void )runloopTimer:(NSTimer *)sender
+{
+    NSDictionary *dict = sender.userInfo;
+    NSValue *value = dict[@"stop"];
+    BOOL *stop = [value pointerValue];
+    void (^action)(BOOL *) = dict[@"action"];
+    if (action&&(!*stop))
+    {
+        action(stop);
+    }
+    else
+    {
+        [sender invalidate];
+        sender = nil;
+        [[NSThread currentThread] cancel];
+    }
 }
 
 /* 这个只能创建一个timer */
