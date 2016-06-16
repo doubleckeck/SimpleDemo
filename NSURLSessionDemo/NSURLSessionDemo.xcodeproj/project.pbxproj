@@ -496,6 +496,7 @@
 				EAD31CC21D12801D001B6FEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAD31CC31D12801D001B6FEF /* Build configuration list for PBXNativeTarget "NSURLSessionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +505,7 @@
 				EAD31CC51D12801D001B6FEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAD31CC61D12801D001B6FEF /* Build configuration list for PBXNativeTarget "NSURLSessionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +514,7 @@
 				EAD31CC81D12801D001B6FEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
