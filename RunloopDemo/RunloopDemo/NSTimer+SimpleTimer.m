@@ -26,16 +26,18 @@ static dispatch_source_t timer;
     __block BOOL stop = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+        /* 用来传值 */
         NSValue *value = [NSValue valueWithPointer:&stop];
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         [dict setObject:value forKey:@"stop"];
         [dict setObject:action forKey:@"action"];
-        [runloop addTimer:[NSTimer timerWithTimeInterval:interval target:self selector:@selector(runloopTimer:) userInfo:dict repeats:repeat] forMode:NSDefaultRunLoopMode];
+        /* 当前线程添加一个timer */
+        [runloop addTimer:[NSTimer timerWithTimeInterval:interval target:self selector:@selector(pr_runloopTimer:) userInfo:dict repeats:repeat] forMode:NSDefaultRunLoopMode];
         [runloop run];
     });
 }
 
-+(void )runloopTimer:(NSTimer *)sender
++(void )pr_runloopTimer:(NSTimer *)sender
 {
     NSDictionary *dict = sender.userInfo;
     NSValue *value = dict[@"stop"];

@@ -118,14 +118,14 @@
     NSLog(@"开始");
     __block NSInteger t = 0;
     /* 第一种定时器 */
-    [NSTimer run_scheduledTimerWithTimerInterval:1 repeat:YES action:^(BOOL *stop) {
-        t++;
-        NSLog(@"执行第%@次",@(t));
-        if (t == 10)
-        {
-            *stop = YES;
-        }
-    }];
+//    [NSTimer run_scheduledTimerWithTimerInterval:1 repeat:YES action:^(BOOL *stop) {
+//        t++;
+//        NSLog(@"执行第%@次",@(t));
+//        if (t == 10)
+//        {
+//            *stop = YES;
+//        }
+//    }];
     
     /* 第二种定时器 */
 //    dispatch_source_t ti = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
@@ -141,13 +141,13 @@
 //    }];
     
     /* 第三种定时器，这个只能创建一个定时器，以最后创建的为准 */
-//    [NSTimer gcd_scheduledTimerWithTimerInterval:1 repeat:YES action:^(BOOL *stop) {
-//        t++;
-//        NSLog(@"1----执行第%@次",@(t));
-//        if (t == 10)
-//        {
-//            *stop = YES;
-//        }
-//    }];
+    [NSTimer gcd_scheduledTimerWithTimerInterval:1 repeat:YES action:^(BOOL *stop) {
+        t++;
+        NSLog(@"1----执行第%@次",@(t));
+        if (t == 10)
+        {
+            *stop = YES;
+        }
+    }];
 }
 @end
