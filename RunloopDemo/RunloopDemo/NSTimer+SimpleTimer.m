@@ -10,6 +10,17 @@
 static dispatch_source_t timer;
 
 @implementation NSTimer (SimpleTimer)
++(void )sleep_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action
+{
+    __block BOOL stop = NO;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        do {
+            action(&stop);
+            sleep(interval);
+        } while (repeat^stop);
+    });
+}
+
 +(void )run_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action
 {
     __block BOOL stop = NO;

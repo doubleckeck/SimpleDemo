@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+/** --------------------------------
+ *
+ *  这里的timer都是异步的timer
+ *
+ * ---------------------------------*/
+
 @interface NSTimer (SimpleTimer)
+/* sleep下的timer */
++(void )sleep_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action;
+
+/* runloop timer */
 +(void )run_scheduledTimerWithTimerInterval:(NSTimeInterval )interval repeat:(BOOL )repeat action:(void (^)(BOOL *stop)) action;
 
 /* 这个只能创建一个timer */
