@@ -18,6 +18,7 @@
 		EAE0E1A81D31373100E51BA6 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E1A71D31373100E51BA6 /* MyButton.m */; };
 		EAE0E1AB1D31388000E51BA6 /* MyObj.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E1AA1D31388000E51BA6 /* MyObj.m */; };
 		EAE0E1AE1D31489C00E51BA6 /* MyObj1.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E1AD1D31489C00E51BA6 /* MyObj1.m */; };
+		EAE0E1FD1D3181B500E51BA6 /* WeakDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0E1FC1D3181B500E51BA6 /* WeakDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		EAE0E1AA1D31388000E51BA6 /* MyObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObj.m; sourceTree = "<group>"; };
 		EAE0E1AC1D31489C00E51BA6 /* MyObj1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyObj1.h; sourceTree = "<group>"; };
 		EAE0E1AD1D31489C00E51BA6 /* MyObj1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyObj1.m; sourceTree = "<group>"; };
+		EAE0E1FB1D3181B500E51BA6 /* WeakDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakDemo.h; sourceTree = "<group>"; };
+		EAE0E1FC1D3181B500E51BA6 /* WeakDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,14 +115,8 @@
 			children = (
 				EAE0E1761D31287C00E51BA6 /* AppDelegate.h */,
 				EAE0E1771D31287C00E51BA6 /* AppDelegate.m */,
-				EAE0E1791D31287C00E51BA6 /* ViewController.h */,
-				EAE0E17A1D31287C00E51BA6 /* ViewController.m */,
-				EAE0E1A61D31373100E51BA6 /* MyButton.h */,
-				EAE0E1A71D31373100E51BA6 /* MyButton.m */,
-				EAE0E1A91D31388000E51BA6 /* MyObj.h */,
-				EAE0E1AA1D31388000E51BA6 /* MyObj.m */,
-				EAE0E1AC1D31489C00E51BA6 /* MyObj1.h */,
-				EAE0E1AD1D31489C00E51BA6 /* MyObj1.m */,
+				EAE0E1FF1D3186C000E51BA6 /* 消息转发 */,
+				EAE0E1FE1D3186B400E51BA6 /* weak obj */,
 				EAE0E17C1D31287C00E51BA6 /* Main.storyboard */,
 				EAE0E17F1D31287C00E51BA6 /* Assets.xcassets */,
 				EAE0E1811D31287C00E51BA6 /* LaunchScreen.storyboard */,
@@ -153,6 +150,30 @@
 				EAE0E19A1D31287C00E51BA6 /* Info.plist */,
 			);
 			path = "弱引用UITests";
+			sourceTree = "<group>";
+		};
+		EAE0E1FE1D3186B400E51BA6 /* weak obj */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0E1FB1D3181B500E51BA6 /* WeakDemo.h */,
+				EAE0E1FC1D3181B500E51BA6 /* WeakDemo.m */,
+			);
+			name = "weak obj";
+			sourceTree = "<group>";
+		};
+		EAE0E1FF1D3186C000E51BA6 /* 消息转发 */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0E1791D31287C00E51BA6 /* ViewController.h */,
+				EAE0E17A1D31287C00E51BA6 /* ViewController.m */,
+				EAE0E1A61D31373100E51BA6 /* MyButton.h */,
+				EAE0E1A71D31373100E51BA6 /* MyButton.m */,
+				EAE0E1A91D31388000E51BA6 /* MyObj.h */,
+				EAE0E1AA1D31388000E51BA6 /* MyObj.m */,
+				EAE0E1AC1D31489C00E51BA6 /* MyObj1.h */,
+				EAE0E1AD1D31489C00E51BA6 /* MyObj1.m */,
+			);
+			name = "消息转发";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +311,7 @@
 				EAE0E1AB1D31388000E51BA6 /* MyObj.m in Sources */,
 				EAE0E1751D31287C00E51BA6 /* main.m in Sources */,
 				EAE0E1A81D31373100E51BA6 /* MyButton.m in Sources */,
+				EAE0E1FD1D3181B500E51BA6 /* WeakDemo.m in Sources */,
 				EAE0E1AE1D31489C00E51BA6 /* MyObj1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +536,7 @@
 				EAE0E19F1D31287C00E51BA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE0E1A01D31287C00E51BA6 /* Build configuration list for PBXNativeTarget "弱引用Tests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +545,7 @@
 				EAE0E1A21D31287C00E51BA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE0E1A31D31287C00E51BA6 /* Build configuration list for PBXNativeTarget "弱引用UITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +554,7 @@
 				EAE0E1A51D31287C00E51BA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
